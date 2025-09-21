@@ -1,0 +1,8 @@
+__pycache__/
+*$py.class
+.idea/
+logs
+.env
+
+.coverage*
+.pytest_cache/

@@ -1,0 +1,41 @@
+project_name: ${PROJECT_NAME}
+project_version: ${PROJECT_VERSION}
+project_environment: ${PROJECT_ENVIRONMENT}
+
+telegram_token: ${TELEGRAM_TOKEN}
+proxy: ${PROXY}
+
+logging:
+  version: 1
+  disable_existing_loggers: true
+#  formatters:
+#    json:
+#      "()": pythonjsonlogger.jsonlogger.JsonFormatter
+#      format: "%(message)s%(name)"
+#      timestamp: true
+  handlers:
+    default:
+#      formatter: json
+      class: logging.StreamHandler
+      stream: ext://sys.stderr
+    access:
+#      formatter: json
+      class: logging.StreamHandler
+      stream: ext://sys.stdout
+  loggers:
+    '':
+      handlers:
+      - default
+      level: DEBUG
+    uvicorn.error:
+      level: DEBUG
+    uvicorn.access:
+      handlers:
+      - access
+      level: DEBUG
+      propagate: false
+    aioclock:
+      handlers:
+      - access
+      level: DEBUG
+      propagate: false

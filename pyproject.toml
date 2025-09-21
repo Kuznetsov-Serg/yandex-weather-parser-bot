@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "Yandex Weather parser"
+version = "0.1.0"
+description = "Yandex Weather parser for Telegram channel"
+authors = ["Kuznetsov-Serg <mail.kuznetcov@gmail.com>"]
+readme = "README.md"
+
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+loguru = "^0.7.3"
+selenium = "^4.35.0"
+webdriver-manager = "^4.0.2"
+bs4 = "^0.0.2"
+pydantic = "^2.11.9"
+aiogram = "^3.22.0"
+dependency-injector = "^4.48.1"
+pyyaml = "^6.0.2"
+fastapi = "^0.116.2"
+aioclock = "^0.3.0"
+pandas = "^2.3.2"
+lxml = "^6.0.1"
+xlsxwriter = "^3.2.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
