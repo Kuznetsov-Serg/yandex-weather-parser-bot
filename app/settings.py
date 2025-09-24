@@ -14,7 +14,7 @@ from app.utils.utils import merge, read_yaml
 
 
 PROJ_ROOT = Path(__file__).parent.parent
-config_env_var = "ONFIG_PATH"
+config_env_var = "CONFIG_PATH"
 DEFAULT_PATH = PROJ_ROOT / "config.yaml"
 ENV_PATH = Path(os.environ.get(config_env_var) or "")
 
