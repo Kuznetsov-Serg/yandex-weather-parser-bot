@@ -13,7 +13,7 @@ def create_city_spr():
         df = pd.read_csv("city_spr.csv")
         df.rename(columns={"name-en": "name_en", "name-ru": "name_ru"}, inplace=True)
         df["name_ru"] = df["name_ru"].str.lower()
-        df["name_en"] = df["name_en"].str.lower()
+        df["name_en"] = df["name_en"].str.replace(" ", "-").str.lower()
         df["id"] = df.index
         connection = sqlite3.connect(PARSED_CONFIG.sqlite_db)
         df[["name_en", "name_ru"]].to_sql(name='City', con=connection, if_exists='append', index=False)
